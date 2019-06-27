@@ -2,11 +2,11 @@ FROM fabric8/java-alpine-openjdk8-jdk:1.5.6.1
 
 # USER root
 # ARG ZIP_FILE
-ADD ./target/service-0.0.1-SNAPSHOT.jar /dir/images
+ADD ./target/service-0.0.1-SNAPSHOT.jar /images
 # RUN chown -R jboss:root /deployments/incloudos
-ENV JAVA_APP_DIR=/dir/images
+ENV JAVA_APP_DIR=/images
 
 # USER jboss
-WORKDIR /dir
+WORKDIR /images
 ENTRYPOINT ["java"]
 CMD ["-jar", "service-0.0.1-SNAPSHOT.jar"]
