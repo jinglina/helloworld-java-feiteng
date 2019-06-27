@@ -1,4 +1,4 @@
-apipeline {
+pipeline {
     agent {any}
     triggers {
         cron('10 0 * * *')
