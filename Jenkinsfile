@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'maven-jenkins'}
+    agent {label 'jenkins-jenkins-slave '}
     triggers {
         cron('10 0 * * *')
     }
