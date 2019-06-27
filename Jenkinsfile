@@ -23,7 +23,7 @@ pipeline {
             steps{
                 echo "2.login oc & docker regristry"
                 
-                sh "docker login -u '${loginName}' -p '${loginPassword}' http://10.7.12.250"
+                sh "docker login -u '${loginName}' -p '${loginPassword}' http://10.7.12.250/harbor/projects"
             }
 
         }
