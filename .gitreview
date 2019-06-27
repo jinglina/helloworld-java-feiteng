@@ -1,0 +1,4 @@
+[gerrit]
+host=100.2.29.160
+port=30418
+project=Service-test.git
