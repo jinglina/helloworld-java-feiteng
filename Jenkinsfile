@@ -34,7 +34,7 @@ pipeline {
                 // sh "mvn clean build -DskipTests"
                 sh "docker build -f src/docker/Dockerfile -t 10.7.12.250/library/test:latest ."
                 // docker build -f src/docker/Dockerfile .
-                sh "docker push docker push 10.7.12.250/library/test:latest"
+                sh "docker push 10.7.12.250/library/test:latest"
             }
         }
 
