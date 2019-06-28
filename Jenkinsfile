@@ -32,7 +32,7 @@ pipeline {
                 echo "3.Maven Build Stage"
                 sh "mvn clean install -DskipTests"
                 // sh "mvn clean build -DskipTests"
-                sh "docker build -f src/docker/Dockerfile -t http://10.7.12.250/library/test:latest ."
+                sh "docker build -f src/docker/Dockerfile -t 10.7.12.250/library/test:latest ."
                 // docker build -f src/docker/Dockerfile .
                 sh "docker push docker push 10.7.12.250/library/test:latest"
             }
