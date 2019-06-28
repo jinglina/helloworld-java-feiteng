@@ -9,4 +9,4 @@ ENV JAVA_APP_DIR=/images
 # USER jboss
 WORKDIR /images
 ENTRYPOINT ["java"]
-CMD ["-jar", "service-0.0.1-SNAPSHOT.jar"]
+CMD ["-jar", "/images/service-0.0.1-SNAPSHOT.jar"]
