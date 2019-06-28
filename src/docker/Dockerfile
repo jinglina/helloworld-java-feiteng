@@ -1,4 +1,4 @@
-FROM fabric8/java-alpine-openjdk8-jdk:1.5.6.1
+FROM 10.7.12.250/longxin/loongnix-openjdk8:latest
 
 # USER root
 # ARG ZIP_FILE
