@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label 'jenkins-build'}
     triggers {
         cron('10 0 * * *')
     }
@@ -24,10 +24,10 @@ pipeline {
             steps{
                 echo "3.Maven Build Stage"
                 sh "mvn clean install -DskipTests"
-                // sh "mvn clean build -DskipTests"
+                sh "mvn clean build -DskipTests"
                 // sh "docker build -f src/docker/Dockerfile -t 10.7.12.250/nana_test/javatest:latest ."
-                // docker build -f src/docker/Dockerfile .
-               // sh "docker push 10.7.12.250/nana_test/javatest:latest"
+                docker build -f src/docker/Dockerfile .
+                sh "docker push 10.7.12.250/nana_test/javatest:latest"
             }
         }
 
