@@ -19,6 +19,15 @@ pipeline {
                     }
 
         }
+        
+        stage('login oc & docker regristry') {
+            steps{
+                echo "2.login oc & docker regristry"
+                
+                sh "docker login -u '${loginName}' -p '${loginPassword}' http://10.7.12.250"
+            }
+
+        }
        
         stage('Build') {
             steps{
