@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'jenkins-build'}
+    agent {any}
     triggers {
         cron('10 0 * * *')
     }
@@ -19,22 +19,15 @@ pipeline {
                     }
 
         }
-        stage('login oc & docker regristry') {
-            steps{
-                echo "2.login oc & docker regristry"
-                
-                sh "docker login -u '${loginName}' -p '${loginPassword}' http://10.7.12.250/harbor/projects"
-            }
-
-        }
+       
         stage('Build') {
             steps{
                 echo "3.Maven Build Stage"
                 sh "mvn clean install -DskipTests"
                 // sh "mvn clean build -DskipTests"
-                sh "docker build -f src/docker/Dockerfile -t 10.7.12.250/nana_test/javatest:latest ."
+                // sh "docker build -f src/docker/Dockerfile -t 10.7.12.250/nana_test/javatest:latest ."
                 // docker build -f src/docker/Dockerfile .
-                sh "docker push 10.7.12.250/nana_test/javatest:latest"
+               // sh "docker push 10.7.12.250/nana_test/javatest:latest"
             }
         }
 
