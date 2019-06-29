@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'jenkins-build'}
+    agent Any
     triggers {
         cron('10 0 * * *')
     }
