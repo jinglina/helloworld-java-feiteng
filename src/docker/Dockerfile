@@ -1,4 +1,4 @@
-FROM 10.7.12.250/longxin/loongnix-openjdk8:latest
+FROM 10.7.12.250/feiteng/arm64v8/openjdk:8-jdk
 
 # USER root
 # ARG ZIP_FILE
