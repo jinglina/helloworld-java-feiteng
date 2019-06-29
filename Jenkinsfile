@@ -24,7 +24,7 @@ pipeline {
             steps{
                 echo "3.Maven Build Stage"
                 sh "mvn clean install -DskipTests"
-                sh "mvn clean build -DskipTests"
+                //sh "mvn clean build -DskipTests"
                 sh "docker build -f src/docker/Dockerfile -t 10.7.12.250/nana_test/javatest:latest ."
                // docker build -f src/docker/Dockerfile .
                 sh "docker push 10.7.12.250/nana_test/javatest:latest"
